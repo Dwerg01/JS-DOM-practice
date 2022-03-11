@@ -12,11 +12,16 @@ body {
     margin: 1.2em;
 }
 
-
-.question-list {
-    display: -webkit-flex;
-    
+container {
+    display: none;
+    /* border: solid;     */
+    /* display: -webkit-flex; */
 }
+
+container.active {
+    display:block;
+}
+
 
 div {
     padding: 0.7em 0.3em 0.2em 0.7em;
