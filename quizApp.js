@@ -88,19 +88,5 @@ var checkAnswer = function (checkNum) {
 
     }
 
-    // console.log(isSelected)
-
-
-// checkAnswer(0)
 
     displayQ(0)
-
-// for (let i = 0; i < questions.length;) {
-//     displayQ(i)
-// // var turns = 0;
-// }
-// while (turns < questions.length) {
-//     displayQ(turns);
-//     checkAnswer(turns)
-//     turns++
-// }
