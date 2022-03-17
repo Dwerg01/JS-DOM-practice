@@ -1,38 +1,35 @@
 
-let turn = 1;
-let score = 0;
+var turn = 1;
+var score = 0;
 
-var total = document.body.childElementCount - 1
-console.log(total)
+function clearQuestions () {
+    var clearActive = document.getElementsByClassName(`container`)
+    for (var item of clearActive) {
+        item.classList.remove('active')
+    }}
 
-var submitButton = document.querySelector(`#sub${turn}`)
-submitButton.textContent = "Submit >";
-
-var clearQuestions = document.getElementsByClassName(`container`)
-for (var item of clearQuestions) {
-    item.classList.remove('active')
+function setQuestion (number) {
+    let activate = document.getElementById(`Question${number}`)
+    activate.classList.add('active')
+    let submitButton = document.querySelector(`#sub${number}`)
+    submitButton.addEventListener("click", NexKeshun(number))
 }
-
-var activate = document.getElementById(`Question${turn}`)
-activate.classList.add('active')
-
-submitButton.addEventListener("click", function() {
+   
+    
+function NexKeshun (number) {
     var target = document.querySelectorAll(`.Q-group-${turn}`);
     let submitAnswer;
     target.forEach(answer => {
-            if (answer.checked) {
-                submitAnswer = answer.id            
-            }})
-    if (submitAnswer) {
-        if (submitAnswer.slice(0,7) === "correct") {
-            score++;
-            turn++;
-        } else {
-            turn++;
-        }
-    } else {
-        alert('please choose a valid option before submitting');
-    }
-    console.log(turn, score)
-});
+        if (answer.checked) {
+            submitAnswer = answer.id    
+            console.log(submitAnswer)    
+        }})
 
+    clearQuestions();
+    number++
+}
+
+
+(function () {
+    setQuestion(turn)
+})();
